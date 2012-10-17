@@ -4,3 +4,4 @@ coverage
 doc
 .yardoc
 *.gem
+.idea
