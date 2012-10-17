@@ -74,6 +74,12 @@ describe Gauss::Distribution, "#with_precision" do
   it "should set the precision_mean to 0.36" do
     @dist.precision_mean.should be_within(0.0001).of(0.36)
   end
+
+  it "sets the precision to 0.0 if it is negative and does not throw an exception" do
+    expect {
+      Gauss::Distribution.with_precision(0.36, -0.0144)
+    }.to_not raise_error
+  end
   
 end
 

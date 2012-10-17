@@ -38,6 +38,7 @@ module Saulabs
         end
   
         def with_precision(mean, precision)
+          precision = 0.0 if precision < 0
           Distribution.new(mean / precision, Math.sqrt(1 / precision))
         end
       
